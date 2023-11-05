@@ -1,0 +1,242 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: rgb(131, 2, 2);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 24%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --max-width: 1170px;
+  --fixed-width: 450px;
+  --clr-orange-1: hsl(12, 83%, 98%);
+  --clr-orange-2: hsl(14, 91%, 95%);
+  --clr-orange-3: hsl(12, 89%, 89%);
+  --clr-orange-4: hsl(13, 87%, 82%);
+  --clr-orange-5: hsl(13, 88%, 68%);
+  --clr-orange-6: hsl(13, 88%, 55%);
+  --clr-orange-7: hsl(13, 74%, 49%);
+  --clr-orange-8: hsl(13, 74%, 33%);
+  --clr-orange-9: hsl(13, 73%, 25%);
+  --clr-orange-10: hsl(13, 73%, 16%);
+  --clr-violet: #6366f1;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--clr-primary-10);
+  color: var(--clr-grey-1);
+  height: 100vh;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+  font-family: sans-serif;
+  color: rgb(56, 56, 56);
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: .5rem;
+}
+h4 {
+  font-family: cursive;
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+.logo{
+  height: 40px;
+}
+.adjust{
+  width: fit-content;
+  margin: 0;
+}
+
+.margin-remove{
+  margin: 0;
+}
+.loading-con{
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-con h1{
+  color: var(--clr-green-dark);
+  transition: var(--transition);
+  text-align: center;
+}
+/*Custom CSS*/
+/*Button*/
+.dynamic-btn-con{
+  height: 80px;
+  padding: 2rem;
+  position: relative;
+}
+.dynamic-btn{
+  position: absolute;
+  cursor: pointer;
+  transition: all .7s ease-in-out;
+  color: var(--clr-orange-5);
+  background-color: var(--clr-orange-1);
+  border: none;
+  font-size: 1.4rem;
+}
+.dynamic-btn-change{
+  font-size: 2rem;
+}
+/*Search Form*/
+/* .searchform-box{
+  background-color: #6366f1;
+}
+ */.searchform{
+  margin: 0 auto;
+  background-color: #fff;
+  width: 400px;
+  padding: .5rem;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+/*Responsive Search Form*/
+@media screen and (min-width: 750px) {
+.searchform{
+  width: 600px;
+  padding: 1rem;
+}  
+.searchform-box label{
+  font-size: 18px;
+  margin-bottom: 1.2rem;
+  margin-left: .3rem;
+}
+.searchform-box input {
+  font-size: 15px;
+  padding: .2rem .5rem;
+  margin-bottom: 1.5rem;
+}
+}
+.searchform-box label{
+  display: block;
+  font-size: 16px;
+  font-family: cursive;
+  color: var(--clr-orange-5);
+  letter-spacing: 1px;
+  margin-bottom: .3rem;
+  margin-left: .2rem;
+  transition: var(--transition);
+}
+.searchform-box input{
+  transition: var(--transition);
+  width: 100%;
+  font-size: 13px;
+  padding: .1rem .5rem;
+  border: 1px solid var(--clr-orange-3);
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: .7rem;
+}
+/*Error Page*/
+.error-page{
+  background-color: #222222cb;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.error-box{
+  transform: translateY(-50%);
+  width: fit-content;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+.error-box h1{
+  margin-bottom: 1rem;
+}
+.useless-con{
+  display: flex;
+  justify-content: center;
+}
+.back-to-home{
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--clr-orange-5);
+  padding: .2rem .5rem;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+.home-div{
+  background-color: var(--clr-orange-1);
+}
